@@ -47,8 +47,10 @@ public class GameOfDice {
         int skip = 0; // Skip adds 0 points
         int bonus = 25; // Bonus adds 25 points
 
+        System.out.println("Welcome! Let's play a game of dice!\n");
+
         do {
-            System.out.printf("Welcome! Let's play a game of dice!\nYou rolled %d and %d\n", dice1 = 1 + roll.nextInt(6), dice2 = 1 + roll.nextInt(6));
+            System.out.printf("You rolled %d and %d\n", dice1 = 1 + roll.nextInt(6), dice2 = 1 + roll.nextInt(6));
             if (dice1 == 1 && dice2 == 1) {
                 score = bonus;
             } else if (dice1 == 1 || dice2 == 1) {
@@ -64,14 +66,17 @@ public class GameOfDice {
 
             if (again.equals("n")) {
                 return;
-            } else {
+            } else  {
                 answer = false;
             }
-        } while (totalScore <= 100 || answer != true);
+
+
+        } while (totalScore < 100);
+
 
         if (totalScore >= 100) {
             System.out.println("You have score over 100! \nThank you for playing! ");
-        } else
+        } else if (answer != true)
             System.out.println("Thank you for playing. See you next time!");
 
     }
